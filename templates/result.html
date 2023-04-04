@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seizure Prediction Result</title>
+    <style>
+        body {
+          height: 100%;
+  color: antiquewhite;
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 4em;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+p {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 1em;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li:before {
+  content: "✓ ";
+  color: #4CAF50;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+      button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      
+
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+h3 {
+  font-size: 2em;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Seizure Prediction Result</h1>
+    {% if result is defined %}
+  {% if result == 1%} 
+    <h3 style="color:red;">Seizure may occur.</h3>
+    <p style="color:white;">There are some things you can do to avoid your seizure triggers. These include:</p>
+    <table>
+      <tr>
+        <th>Things you can do to avoid seizure triggers</th>
+      </tr>
+      <tr>
+        <td>Take your epilepsy medicine</td>
+      </tr>
+      <tr>
+        <td>Have a good sleep routine</td>
+      </tr>
+      <tr>
+        <td>Limit the amount of alcohol you drink</td>
+      </tr>
+      <tr>
+        <td>Avoid flashing or flickering lights</td>
+      </tr>
+      <tr>
+        <td>Eat regular meals</td>
+      </tr>
+    </table>
+    
+  {% else %}
+    <h3 style="color:rgb(125, 230, 125);">Seizure may not occur.</h3>
+    <p>Epilepsy may be hard to live with but it's how you deal with it that makes the difference!</p>
+  {% endif %}
+{% else %}
+  <p>No file uploaded.</p>
+{% endif %}
+    <br>
+    <button onclick="window.location.href='/';">Back to home</button>
+  </body>
+</html>
